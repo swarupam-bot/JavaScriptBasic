@@ -4,99 +4,119 @@
     <title>RockPapperScessiorGame</title>
   </head>
   <body>
+    <style>
+      button{
+        background-color: antiquewhite;
+        border: 0;
+        width: 80px;
+        height: 50px;
+
+      }
+    </style>
+
     <button
-    onclick="
-
-    const randNum=Math.random();
-    let result='';
-    if(randNum>0 && randNum<=1/3)
-    {
-      result='rock'
-    }
-    if(randNum>1/3 && randNum<=1/2)
-    {
-      result='papper'
-    }
-    if(randNum>1/2 && randNum<=1)
-    {
-      result='scessior'
-    }
-
-    if(result==='rock'){
-      console.log('tie');
-    }
-    else if(result==='papper')
-    {
-      console.log('you lost');
-    }
-    else
-    {
-      console.log('you win');
-    }
+    onclick=" 
+        playGame('rock');
     "
     >rock</button>
+
+
     <button
     onclick="
-
-    const randNum=Math.random();
-    let result='';
-    if(randNum>0 && randNum<=1/3)
-    {
-      result='rock'
-    }
-    if(randNum>1/3 && randNum<=1/2)
-    {
-      result='papper'
-    }
-    if(randNum>1/2 && randNum<=1)
-    {
-      result='scessior'
-    }
-
-    if(result==='rock'){
-      console.log('you win');
-    }
-    else if(result==='papper')
-    {
-      console.log('tie');
-    }
-    else
-    {
-      console.log('you lost');
-    }
-    "
+        playGame('papper');
+      "
     >papper</button>
+
+
     <button
     onclick="
-
-    const randNum=Math.random();
-    let result='';
-    if(randNum>0 && randNum<=1/3)
-    {
-      result='rock'
-    }
-    if(randNum>1/3 && randNum<=1/2)
-    {
-      result='papper'
-    }
-    if(randNum>1/2 && randNum<=1)
-    {
-      result='scessior'
-    }
-
-    if(result==='rock'){
-      console.log('you lost');
-    }
-    else if(result==='papper')
-    {
-      console.log('you win');
-    }
-    else
-    {
-      console.log('tie');
-    }
+        playGame('scessior');
     "
     >scessior</button>
+
+    <script>
+
+      let winRound=0;
+      let totalRound=0;
+     
+      function pickComputerMove()
+      {
+        let computerMove='';
+        const randNum=Math.random();
+        if(randNum>0 && randNum<=1/3)
+        {
+          computerMove='rock'
+        }
+        if(randNum>1/3 && randNum<=1/2)
+        {
+          computerMove='papper'
+        }
+        if(randNum>1/2 && randNum<=1)
+        {
+          computerMove='scessior'
+        }
+        return computerMove;
+      }
+
+      function playGame(param)
+      {
+        totalRound++;
+        let computerMove=pickComputerMove(); 
+
+        let result='';
+        if(param==='rock')
+        {
+          if(computerMove===param)
+          {
+            result='tie';
+          }
+          else if(computerMove==='scessior')
+          {
+            result='win';
+            winRound++;
+          }
+          else{
+            result='lost';
+          }
+        }
+        if(param==='papper')
+        {
+          if(computerMove===param)
+          {
+            result='tie';
+          }
+          else if(computerMove==='rock')
+          {
+            result='win';
+            winRound++;
+          }
+          else{
+            result='lost';
+          }
+
+        } 
+        if(param==='scessior')
+        {
+          if(computerMove===param)
+          {
+            result='tie';
+          }
+          else if(computerMove==='papper')
+          {
+            result='win';
+            winRound++;
+          }
+          else{
+            result='lost';
+          }
+        }
+
+        alert(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${totalRound} and Winning Rounds : ${winRound}`)
+        console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}`)
+        console.log(`Total Rounds : ${totalRound} and Winning Rounds : ${winRound}`)
+        
+      }
+    </script>
 
   </body>
 </html>
