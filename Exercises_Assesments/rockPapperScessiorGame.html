@@ -36,8 +36,12 @@
 
     <script>
 
-      let winRound=0;
-      let totalRound=0;
+      let finalScore ={
+        win:0,
+        lost:0,
+        ties:0,
+        total:0
+      }
      
       function pickComputerMove()
       {
@@ -60,7 +64,6 @@
 
       function playGame(param)
       {
-        totalRound++;
         let computerMove=pickComputerMove(); 
 
         let result='';
@@ -73,7 +76,7 @@
           else if(computerMove==='scessior')
           {
             result='win';
-            winRound++;
+          
           }
           else{
             result='lost';
@@ -88,7 +91,7 @@
           else if(computerMove==='rock')
           {
             result='win';
-            winRound++;
+         
           }
           else{
             result='lost';
@@ -104,16 +107,31 @@
           else if(computerMove==='papper')
           {
             result='win';
-            winRound++;
+           
           }
           else{
             result='lost';
           }
         }
 
-        alert(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${totalRound} and Winning Rounds : ${winRound}`)
-        console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}`)
-        console.log(`Total Rounds : ${totalRound} and Winning Rounds : ${winRound}`)
+
+        finalScore.total++;
+
+        if(result==='win')
+        {
+          finalScore.win++;
+        }
+        else if(result==='lost')
+        {
+          finalScore.lost++;
+        }
+        else if(result==='tie')
+        {
+          finalScore.ties++;
+        }
+
+        alert(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${total}, Winning Rounds : ${win}, Lossing Round ${lost}, Tie Round ${ties}`);
+        console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${total}, Winning Rounds : ${win}, Lossing Round ${lost}, Tie Round ${ties}`);
         
       }
     </script>

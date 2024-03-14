@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+      Working With JSON Object. 
+    </title>
+</head>
+<body>
+  <a>Working With JSON Object. </a>
+<script>
+  let finalPrice=0;
+  const productDetails ={
+    productName:'shirt',
+    productColour:'Black',
+    price:'100',
+    priceWithOtherCost : function(){
+      finalPrice=eval(this.price)+this.price/10;
+    }
+  }
+
+  productDetails.priceWithOtherCost();
+  console.log(finalPrice)
+
+  //converting JS object to JSON file
+  console.log(JSON.stringify(productDetails));
+
+  console.log(typeof productDetails)
+
+  //Converting JSON to JS file
+  const stringDetails=JSON.stringify(productDetails);
+
+  console.log(typeof stingDetails)
+
+  console.log(JSON.parse(stringDetails))
+
+
+ 
+
+
+</script>
+
+</body>
+</html>
