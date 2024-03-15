@@ -34,15 +34,29 @@
     "
     >scessior</button>
 
+    <button
+    onclick="
+        finalScore.win=0;
+        finalScore.lost=0;
+        finalScore.ties=0;
+        finalScore.total=0;
+        localStorage.removeItem('score')
+    "
+    >Reset</button>
+
     <script>
 
-      let finalScore ={
-        win:0,
-        lost:0,
-        ties:0,
-        total:0
+      let finalScore =JSON.parse(localStorage.getItem('score'));
+      if(finalScore===null)
+      {
+        finalScore ={
+          win:0,
+          lost:0,
+          ties:0,
+          total:0,
+        }
       }
-      //this is comment 
+
      
       function pickComputerMove()
       {
@@ -131,9 +145,10 @@
           finalScore.ties++;
         }
 
-        alert(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${total}, Winning Rounds : ${win}, Lossing Round ${lost}, Tie Round ${ties}`);
-        console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${total}, Winning Rounds : ${win}, Lossing Round ${lost}, Tie Round ${ties}`);
-        
+        localStorage.setItem('score',JSON.stringify(finalScore))
+
+        alert(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);
+        console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);        
       }
     </script>
 
