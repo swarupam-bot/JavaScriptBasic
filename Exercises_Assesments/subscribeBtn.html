@@ -5,6 +5,7 @@
   </head>
   <body>
     <p>Subscribe my channel. </p>
+    <p class="verify-subcribe">  </p>
     <hr>
     <button onclick="
     subscribeBtn();
@@ -14,13 +15,17 @@
       function subscribeBtn()
       {
         const subButton=document.querySelector('.js-subscribe-Btn');
+        const verifySubButton=document.querySelector('.verify-subcribe');
+
         if(subButton.innerText==='Subscribe')
         {
           subButton.innerHTML='Subscribed';
+          verifySubButton.innerHTML='Thanks for subscribe.';
         }
         else
         {
           subButton.innerHTML='Subscribe';
+          verifySubButton.innerHTML='No Worry :/ ';
         }
 
       }
