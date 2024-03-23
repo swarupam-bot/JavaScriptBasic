@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> subscribe button </title>
+  </head>
+  <body>
+    <p>Subscribe my channel. </p>
+    <hr>
+    <button onclick="
+    subscribeBtn();
+   
+    "  class="js-subscribe-Btn">Subscribe</button>
+    <script>
+      function subscribeBtn()
+      {
+        const subButton=document.querySelector('.js-subscribe-Btn');
+        if(subButton.innerText==='Subscribe')
+        {
+          subButton.innerHTML='Subscribed';
+        }
+        else
+        {
+          subButton.innerHTML='Subscribe';
+        }
+
+      }
+
+
+    </script>
+  </body>
+</html>
