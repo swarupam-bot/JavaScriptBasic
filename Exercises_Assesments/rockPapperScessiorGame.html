@@ -13,28 +13,32 @@
         
       }
     </style>
+    <h3>ROCK PAPPER SCESSIOR GAME</h3>
 
-    <button
+    <button class="js-rockBtn"
     onclick=" 
         playGame('rock');
     "
     >rock</button>
 
 
-    <button
+    <button class="js-papperBtn"
     onclick="
         playGame('papper');
       "
     >papper</button>
 
 
-    <button
+    <button class="js-scessiorBtn"
     onclick="
         playGame('scessior');
     "
     >scessior</button>
 
-    <button
+    <p class="ShowMove">...Moves...</p>
+    <p class="ShowScore">...Final Score...</p>
+
+    <button class="js-resetBtn"
     onclick="
         finalScore.win=0;
         finalScore.lost=0;
@@ -43,6 +47,8 @@
         localStorage.removeItem('score')
     "
     >Reset</button>
+
+   
 
     <script>
 
@@ -147,9 +153,18 @@
 
         localStorage.setItem('score',JSON.stringify(finalScore))
 
-        alert(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);
-        console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);        
+        // alert(`so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);
+        // console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);   
+        
+        let moves=document.querySelector('.ShowMove');
+        moves.innerHTML=`computer's move was ${computerMove} and your move was ${param}`;
+
+        let scores=document.querySelector('.ShowScore');
+        scores.innerHTML=` This is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`;
+
       }
+
+    
     </script>
 
   </body>
