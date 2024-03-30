@@ -9,17 +9,24 @@
       <br>
        Else price + $10 shipping charge .</p>
     <input placeholder="Product Price" class="js-cost-input" onkeydown="
-    if(event.key==='Enter')
-    {
-      priceCalculator();
-    }
+      handleCalculateKey(event);
     ">
     <button onclick="
     priceCalculator();
     ">Calculate</button>
 
-    <p class="js-finalPrice"> </p>
+    <p class="js-finalPrice"></p>
+
+    
     <script>
+      function handleCalculateKey(event)
+      {
+        if(event.key==='Enter')
+        {
+          priceCalculator();
+
+        }
+      }
       function priceCalculator()
       {
         const productPrice=document.querySelector('.js-cost-input');
