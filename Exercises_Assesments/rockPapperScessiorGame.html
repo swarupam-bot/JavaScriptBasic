@@ -35,8 +35,10 @@
     "
     >scessior</button>
 
+    <p class="ShowResult">...Result...</p>
     <p class="ShowMove">...Moves...</p>
     <p class="ShowScore">...Final Score...</p>
+    
 
     <button class="js-resetBtn"
     onclick="
@@ -45,13 +47,13 @@
         finalScore.ties=0;
         finalScore.total=0;
         localStorage.removeItem('score')
+        showFinalResult();
     "
     >Reset</button>
 
    
 
     <script>
-
       let finalScore =JSON.parse(localStorage.getItem('score'));
       if(finalScore===null)
       {
@@ -62,8 +64,13 @@
           total:0,
         }
       }
+      showFinalResult();
 
-     //this is comment
+      function showFinalResult()
+      {
+        document.querySelector('.ShowScore').innerHTML=`Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Rounds : ${finalScore.lost}, Tie Rounds : ${finalScore.ties}`;
+      }
+      
       function pickComputerMove()
       {
         let computerMove='';
@@ -151,18 +158,14 @@
           finalScore.ties++;
         }
 
-        localStorage.setItem('score',JSON.stringify(finalScore))
+        localStorage.setItem('score',JSON.stringify(finalScore));
 
-        // alert(`so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);
-        // console.log(`computer's move was ${computerMove} and your move was ${param} so this is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`);   
+        document.querySelector('.ShowResult').innerHTML=`This is ${result}`;
+        showFinalResult();
+        document.querySelector('.ShowMove').innerHTML=`Computer's move : ${computerMove} , Your move : ${param}`;
         
-        let moves=document.querySelector('.ShowMove');
-        moves.innerHTML=`computer's move was ${computerMove} and your move was ${param}`;
-
-        let scores=document.querySelector('.ShowScore');
-        scores.innerHTML=` This is ${result}  : Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Round ${finalScore.lost}, Tie Round ${finalScore.ties}`;
-
       }
+  
 
     
     </script>
