@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon price</title>
+  </head>
+  <body>
+    <p>Amazon Shipping Calculator</p>
+    <p>If product price is > $40 then no shipping charge 
+      <br>
+       Else price + $10 shipping charge .</p>
+    <input placeholder="Product Price" class="js-cost-input" onkeydown="
+    if(event.key==='Enter')
+    {
+      priceCalculator();
+    }
+    ">
+    <button onclick="
+    priceCalculator();
+    ">Calculate</button>
+
+    <p class="js-finalPrice"> </p>
+    <script>
+      function priceCalculator()
+      {
+        const productPrice=document.querySelector('.js-cost-input');
+        let price=parseInt(productPrice.value);
+
+        let finalPriceElement=document.querySelector('.js-finalPrice');
+
+        console.log(typeof price);
+        if(price<40)
+        {
+          if(price<=0)
+          {
+          price=0;
+          } 
+          else
+          {
+            price=price+10;
+          }
+          
+        }
+       
+   
+        finalPriceElement.innerHTML=`Final Price : $${price}`;
+
+      }
+
+    </script>
+  </body>
+</html>
