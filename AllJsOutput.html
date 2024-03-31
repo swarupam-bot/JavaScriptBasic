@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>All JS Output</title>
+    <body>
+      <h2>All JS Output</h2>
+      <hr>
+
+      <h3>inner HTML</h3>
+      <p>using this we can alter existed data on HTML.</p>
+      <p id="demo"></p>
+      <button onclick="PrintInnerHtml()">ClickOnMe</button>
+
+      <h3>Document.write()</h3>
+      <p>this will remove all html and only print data inside it.</p>
+      <button onclick="PrintDocumentWrite()">ClickOnMe</button>
+
+      <h3>alert()</h3>
+      <p>this use for activate alert box</p>
+      <button onclick="PrintInAlertBox()">ClickOnMe</button>
+
+      <h3>Console.log()</h3>
+      <p>this use for debugging and print in console</p>
+      <button onclick="PrintConsoleLog()">ClickOnMe</button>
+
+      <h3>Window.print()</h3>
+      <p>this use for print the page</p>
+      <button onclick="PrintWindowPrint()">ClickOnMe</button>
+     
+      <script>
+        //using this we can alter existed data on HTML .
+        function PrintInnerHtml()
+        {
+          document.getElementById("demo").innerHTML='This is innerHTML.';
+        }
+
+        //this will remove all html and only print data inside it.
+        function PrintDocumentWrite()
+        {
+          document.write("this is document.write() function.")
+        }
+
+        //this use for activate alert box
+        function PrintInAlertBox()
+        {
+          alert('this is alert() function.');
+        }
+
+         //this use for debugging and print in console
+         function PrintConsoleLog()
+        {
+          Console.log('this is console.log() function.');
+        }
+
+          //this use for print the page
+          function PrintWindowPrint()
+        {
+          window.print();
+        }
+
+
+        
+      </script>
+    </body>
+  </head>
+</html>
