@@ -3,6 +3,9 @@
   <head>
     <title> subscribe button </title>
     <style>
+      body{
+        font-family: arial;
+      }
       .js-subscribe-Btn{
         padding-top: 10px;
         padding-bottom: 10px;
@@ -13,6 +16,8 @@
         color: white;
         border-radius: 20px;
         font-weight: bold;
+        
+        margin-top:30px;
       }
       .is-Subscribed{
         background-color:gainsboro;
@@ -44,7 +49,7 @@
         else
         {
           subButton.innerHTML='Subscribe';
-          verifySubButton.innerHTML='No Worry :/ ';
+          verifySubButton.innerHTML='Please Subscribe.';
           subButton.classList.remove('is-Subscribed')
         }
 

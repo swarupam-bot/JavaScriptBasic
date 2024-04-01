@@ -2,22 +2,40 @@
 <html>
   <head>
     <title>Amazon price</title>
+
+    <style>
+      body{
+        font-family: Arial;
+      }
+      .js-cost-input{
+        padding: 10px;
+        font-size: 15px;
+      }
+      .js-calculate-btn{
+        padding: 12px;
+        background-color: rgb(7, 176, 7);
+        border: none;
+        border-radius: 5px;
+      }
+
+    </style>
   </head>
   <body>
-    <p>Amazon Shipping Calculator</p>
-    <p>If product price is > $40 then no shipping charge 
+    <h4>Amazon Shipping Calculator</h4>
+    <hr>
+    <p>If product price is less then $40 then no shipping charge 
       <br>
-       Else price + $10 shipping charge .</p>
+       Else $10 extra charge for shipping.</p>
     <input placeholder="Product Price" class="js-cost-input" onkeydown="
       handleCalculateKey(event);
     ">
     <button onclick="
     priceCalculator();
-    ">Calculate</button>
+    " class="js-calculate-btn">Calculate</button>
 
     <p class="js-finalPrice"></p>
 
-    
+
     <script>
       function handleCalculateKey(event)
       {
