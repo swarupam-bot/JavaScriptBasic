@@ -1,0 +1,36 @@
+.js-moveBtn
+      {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        border: 3px solid white;
+        border-radius: 50px;
+        background-color: transparent;
+        margin-bottom: 30px;
+        margin-right: 15px;
+
+      }
+      .move-icon
+      {
+        height: 50px;
+      }
+      body
+      {
+        background-color: rgb(25, 25, 25);
+        color: white;
+        font-family: Arial;
+      }
+      .js-resetBtn{
+        padding: 12px 25px;
+        font-size:15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      h3{
+        font-size: 30px;
+      }
+      .ShowResult
+      {
+        font-size: 30px;
+      }
+  
