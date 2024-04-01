@@ -2,14 +2,31 @@
 <html>
   <head>
     <title> subscribe button </title>
+    <style>
+      .js-subscribe-Btn{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        padding-left: 15px;
+        border: none;
+        background-color: red;
+        color: white;
+        border-radius: 20px;
+        font-weight: bold;
+      }
+      .is-Subscribed{
+        background-color:gainsboro;
+        color: gray;
+
+      }
+    </style>
   </head>
   <body>
-    <p>Subscribe my channel. </p>
-    <p class="verify-subcribe">  </p>
+    <p>SUBSCRIBE BUTTON</p>
+    <p class="verify-subcribe"> Subscribe my channel.</p>
     <hr>
     <button onclick="
     subscribeBtn();
-   
     "  class="js-subscribe-Btn">Subscribe</button>
     <script>
       function subscribeBtn()
@@ -22,11 +39,13 @@
         {
           subButton.innerHTML='Subscribed';
           verifySubButton.innerHTML='Thanks for subscribe.';
+          subButton.classList.add("is-Subscribed");
         }
         else
         {
           subButton.innerHTML='Subscribe';
           verifySubButton.innerHTML='No Worry :/ ';
+          subButton.classList.remove('is-Subscribed')
         }
 
       }
