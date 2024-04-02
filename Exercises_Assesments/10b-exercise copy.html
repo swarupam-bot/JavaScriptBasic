@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    button{
+      padding:12px 17px;
+      margin-top: 50px;
+      margin-left: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    .is-toggled
+    {
+      color:white;
+      background-color: black;
+      
+    }
+
+  </style>
+  <head>
+    <title> Exercise 10</title>
+  </head>
+  <body>
+    <button class="js-Gaming-btn" onclick=" 
+     perfomeToggle('.js-Gaming-btn');
+      ">Gaming</button>
+
+      <button class="js-Music-btn" onclick=" 
+      perfomeToggle('.js-Music-btn');
+      ">Music</button>
+
+      <button class="js-Tech-btn" onclick=" 
+      perfomeToggle('.js-Tech-btn');
+      ">Tech</button>
+
+      <script>
+        let tempElement=document.querySelector('.js-Tech-btn');
+        function perfomeToggle(selector)
+        {
+          let element=document.querySelector(selector);
+            if(element.classList.contains('is-toggled'))
+            {
+              element.classList.remove('is-toggled');
+            }
+            else
+            {
+              element.classList.add('is-toggled');
+              tempElement.classList.remove('is-toggled'); 
+            }
+            tempElement=element;
+
+        }
+      </script>
+   
+  </body>
+</html>
