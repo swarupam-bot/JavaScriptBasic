@@ -12,7 +12,8 @@ showFinalResult();
 
 function showFinalResult()
 {
-  document.querySelector('.ShowScore').innerHTML=`Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Rounds : ${finalScore.lost}, Tie Rounds : ${finalScore.ties}`;
+  document.querySelector('.ShowScore').innerHTML=
+  `Total Rounds : ${finalScore.total}, Winning Rounds : ${finalScore.win}, Lossing Rounds : ${finalScore.lost}, Tie Rounds : ${finalScore.ties}`;
 }
 
 function pickComputerMove()
