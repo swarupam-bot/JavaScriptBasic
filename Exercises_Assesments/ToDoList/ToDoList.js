@@ -6,4 +6,6 @@ function getTheTask()
 
   let text=taskElement.value;
   console.log(text)
+  //this is comment
+  
 }
