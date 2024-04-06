@@ -20,8 +20,8 @@ function printAllTask()
   for(let i=0;i<allTask.length;i++)
   {
     const allData=allTask[i];
-    const text=allData.date;
-    const date=allData.task;
+    const text=allData.task;
+    const date=allData.date;
    // const date=datePicker[i];
     const taskHtml=
     ` <div class="js-taskText">${text}</div>
