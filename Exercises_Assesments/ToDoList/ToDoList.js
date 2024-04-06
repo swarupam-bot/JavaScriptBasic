@@ -1,11 +1,15 @@
 
 let allTask=[];
+//let datePicker=[];
 function getTheTask()
 {
+  const dateTime=document.querySelector('.js-dateTimeSelector');
   const taskElement=document.querySelector('.js-inputEle');
-  let text=taskElement.value;
+  let task=taskElement.value;
+  let date=dateTime.value;
   
-  allTask.push(`${text}`);
+  allTask.push({task:task,date:date});
+ // datePicker.push(`${date}`);
   printAllTask();
 }
 
@@ -15,8 +19,18 @@ function printAllTask()
   allTaskHTML='';
   for(let i=0;i<allTask.length;i++)
   {
-    const text=allTask[i];
-    const taskHtml=`<p>${text}</p>`;
+    const allData=allTask[i];
+    const text=allData.date;
+    const date=allData.task;
+   // const date=datePicker[i];
+    const taskHtml=
+    ` <div class="js-taskText">${text}</div>
+      <div class="js-taskDate">${date}</div>
+      <button class="js-taskDelete" onclick="
+        allTask.splice(${i},1);
+        printAllTask();
+      ">Delete</button>
+    `;
 
     allTaskHTML+=taskHtml;
   }

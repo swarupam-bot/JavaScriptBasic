@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>To do list</title>
+    <link rel="stylesheet" href="ToDoList.css">
   </head>
   <body>
-    <h4>To do List.</h4>
+    <h3>ToDo List</h3>
     <input class="js-inputEle" placeholder="Enter your Task.">
-    <button onclick="
+    <input class="js-dateTimeSelector" type="date">
+    <button class="js-addBtn" onclick="
         getTheTask();
-    " >submit</button>
-    <div class="js-taskList"></div>
+    " >Add</button>
+    <div class="js-taskList todo-grid"></div>
 
     <script src="ToDoList.js">
     </script>
