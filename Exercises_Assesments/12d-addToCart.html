@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>set Interval</title>
+    <style>
+      .js-clickBtn
+      {
+        padding: 20px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-clickBtn" onclick="
+      perfomeAdded();
+      setTimeout(remove,2000);
+      ">Add To Cart</button>
+      <p class="js-messageText"></p>
+    <script>
+      function perfomeAdded()
+      {
+        const clickedAct=document.querySelector(".js-messageText");
+        clickedAct.innerHTML="Added";
+      }
+      function remove()
+      {
+        const clickedAct=document.querySelector(".js-messageText");
+        clickedAct.innerHTML=" ";
+      }  
+    </script>
+  </body>
+</html>

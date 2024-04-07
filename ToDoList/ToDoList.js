@@ -17,6 +17,24 @@ function getTheTask()
 function printAllTask()
 {
   allTaskHTML='';
+
+  allTask.forEach(function(allData,index){
+    const text=allData.task;
+    const date=allData.date;
+    const taskHtml=
+    ` <div class="js-taskText">${text}</div>
+      <div class="js-taskDate">${date}</div>
+      <button class="js-taskDelete" onclick="
+        allTask.splice(${index},1);
+        printAllTask();
+      ">Delete</button>
+    `;
+
+    allTaskHTML+=taskHtml;
+    
+  });
+
+  /*
   for(let i=0;i<allTask.length;i++)
   {
     const allData=allTask[i];
@@ -34,6 +52,7 @@ function printAllTask()
 
     allTaskHTML+=taskHtml;
   }
+  */
   document.querySelector('.js-taskList').innerHTML=allTaskHTML;
   
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>set Interval</title>
+    <style>
+      .js-clickBtn
+      {
+        padding: 20px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-clickBtn" onclick="
+       setTimeout(perfomeClick, 3000);
+       Loading();
+      ">Start</button>
+    <script>
+      function perfomeClick()
+      {
+        const clickedAct=document.querySelector(".js-clickBtn");
+        clickedAct.innerHTML="Finished";
+      }
+      function Loading()
+      {
+        const clickedAct=document.querySelector(".js-clickBtn");
+        clickedAct.innerHTML="Loading...";
+
+      }
+     
+     
+      
+      
+      
+      
+    </script>
+  </body>
+</html>
