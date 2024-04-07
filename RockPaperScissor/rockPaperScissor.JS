@@ -35,6 +35,25 @@ function pickComputerMove()
   return computerMove;
 }
 
+let isAutoPlay=false;
+let intervalID;
+
+function runAutoPlay(){
+  if(!isAutoPlay){
+    intervalID=setInterval(function(){
+      let playerMove=pickComputerMove(); 
+      playGame(playerMove);
+    },1000);
+    isAutoPlay=true;
+  }
+  else
+  {
+    clearInterval(intervalID);
+    isAutoPlay=false;
+  }
+  
+}
+
 function playGame(param)
 {
   let computerMove=pickComputerMove(); 

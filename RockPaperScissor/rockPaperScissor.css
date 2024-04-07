@@ -20,7 +20,8 @@
         color: white;
         font-family: Arial;
       }
-      .js-resetBtn{
+      .js-resetBtn,
+      .js-auto-play{
         padding: 12px 25px;
         font-size:15px;
         font-weight: bold;
