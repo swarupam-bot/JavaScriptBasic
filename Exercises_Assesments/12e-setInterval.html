@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title class="js-title">set Interval</title>
+    <button class="js-AddBtn"
+    onclick="
+    AddNumber();
+    "
+    >Add</button>
+    <button class="js-removeBtn"
+    onclick="
+    removeNumber();
+    "
+    >remove</button>
+  </head>
+  <body></body>
+    <script>
+      
+      let i = 2;
+    let interval;
+
+    function printMessage() {
+      interval = setInterval(function() {
+        if (document.title ==='set Interval') {
+          if(i>0)
+          {
+            document.querySelector(".js-title").innerHTML = `(${i}) New Message`;
+          }
+          
+        } else {
+          document.querySelector(".js-title").innerHTML = "set Interval";
+        }
+        
+      }, 1000);
+    
+    }
+
+    function AddNumber(){
+      i++;
+    }
+    function removeNumber(){
+      i--;
+    }
+
+    
+    printMessage();
+    
+
+
+      
+
+      
+    
+     
+      
+    </script>
+  </body>
+</html>

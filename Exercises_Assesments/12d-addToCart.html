@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>set Interval</title>
+    <title>setTimeOuts</title>
     <style>
       .js-clickBtn
       {
@@ -12,7 +12,8 @@
   <body>
     <button class="js-clickBtn" onclick="
       perfomeAdded();
-      setTimeout(remove,2000);
+      performTimeouts();
+      
       ">Add To Cart</button>
       <p class="js-messageText"></p>
     <script>
@@ -26,6 +27,23 @@
         const clickedAct=document.querySelector(".js-messageText");
         clickedAct.innerHTML=" ";
       }  
+
+      let timeOuts=0;
+      function performTimeouts()
+      {
+        if(timeOuts===0)
+        {
+          timeOuts= setTimeout(remove,5000);
+        }
+        else
+        {
+          clearTimeout(timeOuts);
+          timeOuts=0;
+          remove();
+        }
+
+      }
+
     </script>
   </body>
 </html>
