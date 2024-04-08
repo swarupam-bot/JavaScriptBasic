@@ -1,6 +1,16 @@
 
 let allTask=[];
 //let datePicker=[];
+
+const AddBtnEle=document.querySelector('.js-addBtn');
+const clickOnAddBtnEvent=()=>
+{
+  getTheTask();
+}
+AddBtnEle.addEventListener('click',clickOnAddBtnEvent);
+
+
+
 function getTheTask()
 {
   const dateTime=document.querySelector('.js-dateTimeSelector');
@@ -13,12 +23,11 @@ function getTheTask()
   printAllTask();
 }
 
-
 function printAllTask()
 {
   allTaskHTML='';
 
-  allTask.forEach(function(allData,index){
+  allTask.forEach((allData,index)=>{
     const text=allData.task;
     const date=allData.date;
     const taskHtml=
@@ -33,6 +42,7 @@ function printAllTask()
     allTaskHTML+=taskHtml;
     
   });
+  document.querySelector('.js-taskList').innerHTML=allTaskHTML;
 
   /*
   for(let i=0;i<allTask.length;i++)
@@ -53,7 +63,10 @@ function printAllTask()
     allTaskHTML+=taskHtml;
   }
   */
-  document.querySelector('.js-taskList').innerHTML=allTaskHTML;
+
+  //for event listner
+
+  
   
 
 }

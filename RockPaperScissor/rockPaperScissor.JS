@@ -1,4 +1,7 @@
 let finalScore =JSON.parse(localStorage.getItem('score'));
+
+
+
 if(finalScore===null)
 {
   finalScore ={
@@ -53,6 +56,25 @@ function runAutoPlay(){
   }
   
 }
+
+
+document.querySelector('.js-moveBtnRock')
+.addEventListener('click',()=>
+{
+  playGame('rock');
+});
+
+document.querySelector('.js-moveBtnPaper')
+.addEventListener('click',()=>
+{
+  playGame('paper');
+})
+
+const scissorsBtnEle=document.querySelector('.js-moveBtnScissors')
+.addEventListener('click',()=>
+{
+  playGame('scissors');
+})
 
 function playGame(param)
 {

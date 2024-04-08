@@ -1,4 +1,6 @@
-.js-moveBtn
+.js-moveBtnRock,
+.js-moveBtnPaper,
+.js-moveBtnScissors
       {
         width: 100px;
         height: 100px;
